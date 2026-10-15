@@ -2,7 +2,11 @@
 
 本文说明怎样从当前本地工程得到评审可访问的 GitHub 源码链接和 Render 公网 Web URL。链接只有完成 GitHub 推送和 Render 首次部署后才会产生；本文件不代表已经发布或部署。
 
-## 当前状态
+## 执行结果 · 2026-10-15
+
+已取得[公开源码链接](https://github.com/rtyy5675-sys/investment-research-demo)与[Render Web URL](https://jianwei-investment-research-preview.onrender.com)。已验证公网认证、页面资源与一条真实研究任务，详见[部署与公网验收](部署与公网验收_2026-10-15.md)。下面保留发布前检查和可复现操作路径；公开仓库使用清理后的源码副本建立新历史。
+
+## 发布前状态（历史记录）
 
 - 本地工程分支为 `main`，目前没有配置 GitHub remote。
 - 发布前必须先清理案例内容：当前工作树和已有提交历史仍能检索到“原测试公司”示例。即使只删掉当前文件再推送 `main`，旧提交仍会随仓库公开。
