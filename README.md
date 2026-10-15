@@ -2,7 +2,7 @@
 
 把公司财报中的数据与用户关心的问题连起来：确认公司和报告期，读取实际财务数据，区分披露事实与推断，并说明仍缺少什么证据。研究记忆可以跨会话延续关注点和未解决的问题；用户可查看、修改、停用或删除。
 
-[公开源码](https://github.com/rtyy5675-sys/investment-research-demo) · [源码与部署状态](docs/源码与部署状态.md)
+[Web 预览](https://jianwei-investment-research-preview.onrender.com)（需单独获取预览密码） · [公开源码](https://github.com/rtyy5675-sys/investment-research-demo) · [源码与部署状态](docs/源码与部署状态.md)
 
 ## 当前范围
 
@@ -54,6 +54,8 @@ DEMO_INPUT='公司代码、报告期和需要核查的问题' npm run verify
 ```
 
 ## 验证状态与部署
+
+[公网部署与真实任务验收记录](docs/部署与公网验收_2026-10-15.md)：源码已公开，Render 免费服务已上线，完成一条真实财报研究任务。
 
 最新系统验收尚未全部通过。单元测试与模拟异常检查通过，不代表所有真实任务完成；原始材料驱动的任务、部分补查回答仍有已记录失败。请先查看[系统性测试报告](docs/系统性测试报告_2026-10-15.md)和[公开测试摘要](docs/evidence/public-test-summary.json)。截图保留实际成功、失败与模拟场景的区别，原始调用记录及本地用户状态不公开。
 
