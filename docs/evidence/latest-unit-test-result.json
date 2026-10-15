@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-15",
+  "command": "npm test",
+  "codeCommit": "f09732703f1fca02621e5d12f37ab8ff4adba940",
+  "scope": "Deterministic unit tests; no live model/MCP calls or end-to-end scenario acceptance",
+  "result": {
+    "total": 158,
+    "passed": 158,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0
+  },
+  "exitCode": 0,
+  "testOutputSha256": "60315a00a3170dcaf25497b69a28ca195bb19a88ffc41a2dccbf263298738769",
+  "addedSince153": {
+    "file": "tests/mcp-discovery-recovery.test.mjs",
+    "tests": 5,
+    "covers": [
+      "transient discovery retry",
+      "initialization with fresh transport",
+      "retry bound",
+      "permission does not retry",
+      "cancel does not retry"
+    ]
+  }
+}

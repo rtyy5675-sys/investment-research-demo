@@ -2,8 +2,16 @@
   "date": "2026-10-15",
   "scope": "Public summary; raw provider responses and local user state intentionally excluded.",
   "localTests": {
-    "passed": 153,
-    "failed": 0
+    "total": 158,
+    "passed": 158,
+    "failed": 0,
+    "skipped": 0,
+    "cancelled": 0,
+    "command": "npm test",
+    "codeCommit": "f09732703f1fca02621e5d12f37ab8ff4adba940",
+    "evidence": "latest-unit-test-result.json",
+    "previousRecordedCount": 153,
+    "change": "Added 5 MCP initialization/discovery recovery tests; rerun confirms 158 passed."
   },
   "syntheticHttpGroups": {
     "passed": 25,
@@ -24,12 +32,20 @@
   },
   "overallAcceptance": "not_passed",
   "remaining": [
-    "financial answer consistency and evidence-origin wording",
+    "financial supplement answer consistency and evidence-origin wording (not stable)",
     "historical point-in-time not supported",
     "Render ephemeral storage does not provide durable long-term memory"
   ],
   "releaseEvaluationScope": "identified A-share company financial research, supported supplement, continuity and runtime",
   "excludedScopes": [
     "standalone table/material research without an identifiable A-share company"
-  ]
+  ],
+  "overallAcceptanceScope": "Full product scenario acceptance, separate from deterministic unit tests.",
+  "overallAcceptanceReason": "Financial supplement answer updates are not stable; some injection tasks do not complete. Passing unit tests and an observed main workflow do not establish full scenario acceptance.",
+  "acceptanceLevels": {
+    "unitTests": "passed",
+    "observedPublicMainWorkflow": "passed for one observed task",
+    "allProductScenarios": "not_passed",
+    "longTermUserValue": "not_evaluated"
+  }
 }
