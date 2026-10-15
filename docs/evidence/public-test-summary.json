@@ -17,12 +17,6 @@
     "passed": 5,
     "total": 5
   },
-  "originalFirstRound": {
-    "scenarios": 4,
-    "answerTurns": 5,
-    "normalWorkflowCompleted": 0,
-    "notFinancialAccuracy": true
-  },
   "realWorkflow": {
     "companyResearch": "passed for observed example",
     "newSessionContinuation": "passed with constructed concern and prior public PDF",
@@ -30,9 +24,12 @@
   },
   "overallAcceptance": "not_passed",
   "remaining": [
-    "provided-material entry blocked by real A-share resolver",
     "financial answer consistency and evidence-origin wording",
     "historical point-in-time not supported",
     "Render ephemeral storage does not provide durable long-term memory"
+  ],
+  "releaseEvaluationScope": "identified A-share company financial research, supported supplement, continuity and runtime",
+  "excludedScopes": [
+    "standalone table/material research without an identifiable A-share company"
   ]
 }

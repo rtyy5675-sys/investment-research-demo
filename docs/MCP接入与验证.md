@@ -31,10 +31,12 @@
 
 已完成构建、语法检查、本机API联调及浏览器界面检查。缺Key的新任务明确failed、result=null、evidence=0、modelCalls=0；验证面板显示未配置/尚未验证通过；旧实例仍能加载。没有在缺凭据时重跑消耗模型的完整对照。
 
-最初鉴权检查（原始记录本地保留；参见[公开测试摘要](evidence/public-test-summary.json)）；有效Key参数修复与三表取数检查（原始记录本地保留；参见[公开测试摘要](evidence/public-test-summary.json)）；[界面](screenshots/mcp-connection.png)。三类财务取数和字段校验现已通过（见参数修复记录）；完整模型研究与补查链路仍需独立验证，不能用单独取数代替。
+最初鉴权检查（原始记录本地保留；参见[公开测试摘要](evidence/public-test-summary.json)）；有效Key参数修复与三表取数检查（原始记录本地保留；参见[公开测试摘要](evidence/public-test-summary.json)）；界面（历史附件未随公开版本分发）。三类财务取数和字段校验现已通过（见参数修复记录）；完整模型研究与补查链路仍需独立验证，不能用单独取数代替。
 
 ## iFinD
 
 已核实实际地址为`https://api-mcp.51ifind.com:8643/ds-mcp-servers/hexin-ifind-ds-mcp`，需要`Authorization`携带个人MCP密钥原文。无凭据实际initialize返回HTTP401、Gateway authentication failed。目前没有接入其查询，不把附件中的门户页当作MCP端点。
 
 官方依据：[扶摇MCP概览](https://fuyao.aicubes.cn/docs/mcp/overview/)、[财务字段](https://fuyao.aicubes.cn/docs/api-reference/financials/)、[iFinD官方门户](https://mcp.51ifind.com/)、[官方客户端SDK](https://github.com/modelcontextprotocol/typescript-sdk)。
+
+公开版附件说明：上述未分发的历史附件不作为本包可点击文件；当前可用图片见[精选截图索引](提交材料/06_截图索引.md)。
