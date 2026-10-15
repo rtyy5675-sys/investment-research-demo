@@ -6,7 +6,7 @@
 
 仓库根目录的 `render.yaml` 声明了 Node Web Service：
 
-- 构建：`npm ci && npm run build`
+- 构建：`npm ci --include=dev && npm run build`
 - 启动：`node server.mjs`，不在每次重启时重复构建前端
 - Node.js：固定为本机已验证的 `24.21.0`，避免平台默认版本变化
 - 监听：`HOST=0.0.0.0`，端口由平台通过 `PORT` 提供

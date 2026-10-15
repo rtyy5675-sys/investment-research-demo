@@ -3,7 +3,7 @@ services:
     name: jianwei-investment-research-preview
     runtime: node
     plan: free
-    buildCommand: npm ci && npm run build
+    buildCommand: npm ci --include=dev && npm run build
     startCommand: node server.mjs
     healthCheckPath: /healthz
     envVars:
