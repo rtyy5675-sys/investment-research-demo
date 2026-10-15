@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: jianwei-investment-research-preview
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: node server.mjs
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: RESEARCH_STORAGE_MODE
+        value: ephemeral
+      - key: HOST
+        value: 0.0.0.0
+      - key: NODE_VERSION
+        value: 24.21.0
+      - key: MODEL_PROVIDER
+        sync: false
+      - key: PREVIEW_ACCESS_USERNAME
+        value: reviewer
+      - key: PREVIEW_ACCESS_PASSWORD
+        generateValue: true
+      - key: MODEL_BASE_URL
+        sync: false
+      - key: MODEL_API_KEY
+        sync: false
+      - key: MODEL_NAME
+        sync: false
+      - key: FUYAO_API_KEY
+        sync: false

@@ -1,0 +1,23 @@
+{
+  "caseId": "business-understanding",
+  "reviewer": "填写审查者标识",
+  "reviewedAt": "填写审查日期",
+  "observationType": "desk_review",
+  "sessionId": null,
+  "participantId": null,
+  "financialSemantics": {
+    "items": [
+      { "index": 0, "status": "pending", "evidence": "填写原始字段/披露出处、对应最终句子和判断理由；不能只写看起来正确" }
+    ]
+  },
+  "exceptionBehavior": {
+    "items": [
+      { "index": 0, "status": "pending", "evidence": "填写操作、调用 ID/任务版本、预期和实际结果" }
+    ]
+  },
+  "userUnderstanding": {
+    "items": [
+      { "index": 0, "status": "pending", "evidence": "仅在真实用户观察后填写用户原话；此示例不是已完成试用" }
+    ]
+  }
+}

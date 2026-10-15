@@ -1,0 +1,43 @@
+.research-assistant-label, .research-panel-actions { display: flex; align-items: center; gap: 7px; }
+.research-assistant-label { color: #45443e; font-size: 12px; }
+.research-navigation { padding-bottom: 9px; }
+.research-panel-actions { gap: 3px; }
+.research-context.rc-collaboration { width: 360px; flex-basis: 360px; }
+.research-context.rc-drawer.rc-collaboration[data-slot='sheet-content'] { width: min(390px,100vw); max-width: 100vw; }
+.rc-view-switch { display: flex; flex: none; gap: 4px; padding: 12px 18px; border-bottom: 1px solid #e6e3de; }
+.rc-view-switch button { padding: 7px 10px; border-radius: 6px; font-size: 11px; color: #73716a; }
+.rc-view-switch button[aria-pressed='true'] { background: #eeebe5; color: #38362f; }
+.collaboration-panel { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.collaboration-caption { flex: none; padding: 15px 20px 10px; font-size: 11px; line-height: 1.8; color: #77736a; }
+.collaboration-panel > .work-filter { flex: none; margin: 0; padding: 0 18px 10px; border-bottom: 1px solid #eeebe5; }
+.collaboration-messages { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 18px 18px 24px; }
+.collaboration-message { margin: 0 0 20px; }
+.collaboration-meta { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; color: #77736a; font-size: 10px; }
+.collaboration-meta strong { font-size: 11px; font-weight: 550; color: #4d4941; }
+.collaboration-meta > small { margin-left: auto; font-size: 9px; white-space: nowrap; }
+.collaboration-avatar { display: grid; place-items: center; width: 23px; height: 23px; flex: 0 0 23px; border: 1px solid #e0dacf; border-radius: 7px; background: #f4f0e9; color: #8a714d; margin-right: 2px; }
+.collaboration-bubble { padding: 12px 13px; border: 1px solid #e7e2d9; background: #fff; border-radius: 2px 11px 11px; color: #555149; font-size: 12px; line-height: 1.85; overflow-wrap: anywhere; }
+.collaboration-bubble p + p { margin-top: 9px; }
+.collaboration-bubble ul, .collaboration-bubble ol { padding-left: 18px; }
+.collaboration-bubble pre { max-width: 100%; overflow-x: auto; padding: 8px; background: #f7f5f1; border-radius: 5px; font-size: 10px; }
+.collaboration-bubble code { font-size: .9em; }
+.collaboration-bubble .tool-record summary { display: flex; align-items: center; gap: 6px; cursor: pointer; font-size: 11px; }
+.collaboration-bubble .tool-record[open] summary { margin-bottom: 10px; }
+.collaboration-bubble .table-scroll { max-width: 100%; overflow-x: auto; }
+.collaboration-bubble table { border-collapse: collapse; font-size: 10px; }
+.collaboration-bubble th, .collaboration-bubble td { padding: 4px 6px; border: 1px solid #e7e2d9; }
+.collaboration-ask { display: inline-flex; align-items: center; gap: 4px; margin-top: 11px; padding: 3px 0; font-size: 10px; color: #8a714d; }
+.collaboration-ask:hover { color: #5e492d; text-decoration: underline; text-underline-offset: 3px; }
+.collaboration-message.from-user .collaboration-bubble { background: #f3efe7; }
+.collaboration-message.superseded { opacity: .65; }
+.collaboration-stale { display: block; margin-top: 9px; font-size: 10px; color: #8a7f6b; }
+.collaboration-empty { padding: 42px 12px; text-align: center; color: #969084; }
+.collaboration-empty > svg { margin: 0 auto 14px; }
+.collaboration-empty strong { display: block; font-size: 12px; font-weight: 500; color: #696258; }
+.collaboration-empty p { margin-top: 8px; font-size: 11px; line-height: 1.9; }
+.rc-view-switch button:focus-visible, .collaboration-panel button:focus-visible { outline: 2px solid #a5885a; outline-offset: 3px; }
+@media(max-width:760px) {
+  .research-navigation { justify-content: space-between; padding-bottom: 7px; }
+  .research-assistant-label { font-size: 11px; gap: 5px; }
+  .research-panel-actions .context-toggle { padding-inline: 6px; font-size: 10px; }
+}

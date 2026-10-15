@@ -1,0 +1,96 @@
+Browser tab: 15, Title: "见微 · 投资研究助手", URL: "http://127.0.0.1:8803/?task=24ea226c-fe21-4ede-936e-99429c0ac295".
+1 AXWebArea 见微 · 投资研究助手, URL: 127.0.0.1:8803/?task=24ea226c-fe21-4ede-936e-99429c0ac295
+	2 container root
+		3 container 研究导航
+			4 text 见微 Jianwei
+			5 button 新的研究 ⌘ K
+				6 text 新的研究
+				7 text ⌘ K
+			8 text 你的研究
+			9 container 研究会话
+				10 button [合成界面验收]整轮预算到期；虚构公司（999999 演示, Help: [合成界面验收]整轮预算到期；虚构公司（999999
+					11 text [合成界面验收]整轮预算到期；虚构公司（999999
+					12 text 演示
+				13 button [合成界面验收]主动停止；虚构公司（999999.S 演示, Help: [合成界面验收]主动停止；虚构公司（999999.S
+					14 text [合成界面验收]主动停止；虚构公司（999999.S
+					15 text 演示
+				16 button [合成界面验收]有效结果后的补查失败；虚构公司（99 演示, Help: [合成界面验收]有效结果后的补查失败；虚构公司（99
+					17 text [合成界面验收]有效结果后的补查失败；虚构公司（99
+					18 text 演示
+				19 button [合成界面验收]工具权限修复后重试；虚构公司（999 演示, Help: [合成界面验收]工具权限修复后重试；虚构公司（999
+					20 text [合成界面验收]工具权限修复后重试；虚构公司（999
+					21 text 演示
+				22 button [合成界面验收]工具权限失败；虚构公司（999999 演示, Help: [合成界面验收]工具权限失败；虚构公司（999999
+					23 text [合成界面验收]工具权限失败；虚构公司（999999
+					24 text 演示
+				25 button [合成界面验收]模型429限流；虚构公司（99999 演示, Help: [合成界面验收]模型429限流；虚构公司（99999
+					26 text [合成界面验收]模型429限流；虚构公司（99999
+					27 text 演示
+			28 button 研究记忆
+			29 text 你
+			30 text 个人研究空间
+			31 text 扶摇 MCP
+		32 container
+			33 text 投资研究 [合成界面验收]整轮预算到期；虚构公司（999999
+			34 button 配置模型 API
+			35 button 数据连接：扶摇 MCP，已配置 · 待验证
+			36 button 查看研究依据
+			37 pop up button (collapsed) Description: 更多操作, ID: radix-_r_0_, Secondary Actions: Expand
+			38 text 研究助手
+			39 button (collapsed) 协作记录, Secondary Actions: Expand
+			40 button (expanded) Description: 研究上下文, Secondary Actions: Collapse
+			41 container Description: 与研究助手的对话, ID: research-conversation
+				42 container
+					43 text 验收会话 · 记录用于功能检查，不代表真实用户的投资立场
+					44 container 本轮执行状态
+						45 button (collapsed) 已到本轮执行上限 · 0 秒, Secondary Actions: Expand
+							46 text 已到本轮执行上限
+							47 text · 0 秒
+						48 container
+							49 text 已到本轮执行上限 · 0 秒
+					50 text [合成界面验收]整轮预算到期；虚构公司（999999.SZ）2024年度，核对利润与现金流。
+					51 text 这次研究未能完成
+					52 text 本轮研究达到总时间上限，已停止；已取得的资料和上一版结果保留。
+					53 text 本轮预算已用完；可发起下一轮继续研究。
+					54 button 重试当前操作
+			55 container
+				56 text entry area (settable) 向研究助手提问
+				57 container
+					58 button (collapsed) Description: 展开辅助操作, Secondary Actions: Expand
+				59 text 研究助手
+				60 button (disabled) 发送问题
+			61 text 扶摇 MCP · 基于取得的证据回答 · 重要判断请核对原始资料
+		62 container 研究上下文, ID: research-context-panel
+			63 container
+				64 text RESEARCH CONTEXT
+				65 heading 研究上下文, Value: 2
+					66 text 研究上下文
+				67 button 关闭研究侧栏
+			68 container 研究侧栏内容
+				69 checkbox 研究上下文, Value: 1
+				70 checkbox 协作记录, Value: 0
+			71 container
+				72 container 研究范围
+					73 heading 研究对象, Value: 3
+						74 text 研究对象
+					75 text 研究对象和报告期间尚未确认。确认后会显示在这里。
+					76 button 修改研究问题
+				77 container 本轮关注
+					78 heading 本轮关注, Value: 2
+						79 text 本轮关注
+					80 text 问题理解 · 可修改
+					81 button 修改研究问题
+					82 text [合成界面验收]整轮预算到期；虚构公司（999999.SZ）2024年度，核对利润与现金流。
+				83 container 个人研究记忆
+					84 heading 个人研究记忆, Value: 3
+						85 text 个人研究记忆
+					86 button 管理
+					87 container 本次研究记忆
+						88 text 本次不沿用研究记忆。
+						89 button 允许沿用
+						90 button 管理
+					91 container
+						92 text 当前对话已保存至本机服务 本次不自动更新个人记录
+			93 text 记录保存在本机服务目录，可修改、停用或删除。
+
+The focused UI element is 1 AXWebArea 见微 · 投资研究助手, URL: 127.0.0.1:8803/?task=24ea226c-fe21-4ede-936e-99429c0ac295

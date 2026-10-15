@@ -1,0 +1,166 @@
+Browser tab: 15, Title: "见微 · 投资研究助手", URL: "http://127.0.0.1:8803/?task=d97a7987-7a87-4e63-bbd5-5881d0a60651".
+1 AXWebArea 见微 · 投资研究助手, URL: 127.0.0.1:8803/?task=d97a7987-7a87-4e63-bbd5-5881d0a60651
+	2 container root
+		3 container 研究导航
+			4 text 见微 Jianwei
+			5 button 新的研究 ⌘ K
+				6 text 新的研究
+				7 text ⌘ K
+			8 text 你的研究
+			9 container 研究会话
+				10 button [合成界面验收][保存失败]保存重试恢复；虚构公司（ 演示, Help: [合成界面验收][保存失败]保存重试恢复；虚构公司（
+					11 text [合成界面验收][保存失败]保存重试恢复；虚构公司（
+					12 text 演示
+				13 button [合成界面验收][保存失败]保存失败仍可见；虚构公司 演示, Help: [合成界面验收][保存失败]保存失败仍可见；虚构公司
+					14 text [合成界面验收][保存失败]保存失败仍可见；虚构公司
+					15 text 演示
+				16 button [合成界面验收]整轮预算到期；虚构公司（999999 演示, Help: [合成界面验收]整轮预算到期；虚构公司（999999
+					17 text [合成界面验收]整轮预算到期；虚构公司（999999
+					18 text 演示
+				19 button [合成界面验收]主动停止；虚构公司（999999.S 演示, Help: [合成界面验收]主动停止；虚构公司（999999.S
+					20 text [合成界面验收]主动停止；虚构公司（999999.S
+					21 text 演示
+				22 button [合成界面验收]有效结果后的补查失败；虚构公司（99 演示, Help: [合成界面验收]有效结果后的补查失败；虚构公司（99
+					23 text [合成界面验收]有效结果后的补查失败；虚构公司（99
+					24 text 演示
+				25 button [合成界面验收]工具权限修复后重试；虚构公司（999 演示, Help: [合成界面验收]工具权限修复后重试；虚构公司（999
+					26 text [合成界面验收]工具权限修复后重试；虚构公司（999
+					27 text 演示
+				28 button [合成界面验收]工具权限失败；虚构公司（999999 演示, Help: [合成界面验收]工具权限失败；虚构公司（999999
+					29 text [合成界面验收]工具权限失败；虚构公司（999999
+					30 text 演示
+				31 button [合成界面验收]模型429限流；虚构公司（99999 演示, Help: [合成界面验收]模型429限流；虚构公司（99999
+					32 text [合成界面验收]模型429限流；虚构公司（99999
+					33 text 演示
+			34 button 研究记忆
+			35 text 你
+			36 text 个人研究空间
+			37 text 扶摇 MCP
+		38 container
+			39 text 投资研究 合成验收虚构公司
+			40 button 配置模型 API
+			41 button 数据连接：扶摇 MCP，已配置 · 待验证
+			42 button 查看研究依据
+				43 text 依据
+				44 text 2
+			45 pop up button (collapsed) Description: 更多操作, ID: radix-_r_0_, Secondary Actions: Expand
+			46 text 研究助手
+			47 button (collapsed) 协作记录, Secondary Actions: Expand
+			48 button (expanded) Description: 研究上下文, Secondary Actions: Collapse
+			49 container Description: 与研究助手的对话, ID: research-conversation
+				50 container
+					51 text 验收会话 · 记录用于功能检查，不代表真实用户的投资立场 [合成界面验收][保存失败]保存重试恢复；虚构公司（999999.SZ）2024年度，核对利润与现金流。
+					52 container 研究助手
+					53 text 研究助手 本轮新增 2 项 · 沿用 0 项 · 报表查询 2 次 第  1  版 这次能判断什么
+					54 text 仅验证执行机制。
+					55 container 本轮研究进展
+						56 text 本题已回答
+					57 container 交互式财务图解
+						58 container
+							59 heading 本轮财务图解, Value: 3
+								60 text 本轮财务图解
+							61 text 随取证结果更新
+						62 tab group 选择财务图表
+							63 tab (selected, settable, boolean) 利润表现, Value: 1
+							64 tab (selectable, settable, boolean) 三类现金流, Value: 0
+						65 container 利润表现
+							66 heading 收入与利润怎样变化, Value: 4
+								67 text 收入与利润怎样变化
+							68 text 2024 年全年  · 同比 · 合并口径
+							69 container 展示方式
+								70 checkbox 图表, Value: 1
+								71 checkbox 数据, Value: 0
+							72 container 选择利润指标
+								73 checkbox 营业收入, Value: 1
+								74 checkbox 归母净利润, Value: 0
+							75 container
+								76 text 1.00 亿元
+							77 text 同比0.00亿元（0.00%）
+							78 image 营业收入同期对比，点击柱形查看数值
+								79 text 亿元
+								80 text 0
+								81 text 1
+								82 text 1
+								83 button 2023 年全年营业收入1.00亿元
+									84 text 1.00
+									85 text 2023 年
+								86 button 2024 年全年营业收入1.00亿元
+									87 text 1.00
+									88 text 2024 年
+							89 text 点选图中的柱形，查看对应数值与含义。
+							90 text 分别比较营业收入和归母净利润的同期变化；切换指标时，刻度随对应数值调整。
+							91 button 核对报表数据 扶摇 MCP
+								92 text 核对报表数据
+								93 text 扶摇 MCP
+					94 button (expanded) 查看依据与解释, Secondary Actions: Collapse
+						95 text 查看依据与解释
+					96 container
+						97 heading 资料是否取得, Value: 4
+							98 text 资料是否取得
+						99 text 仅用于执行机制验收。
+						100 button Description: 查看依据：合成验收虚构公司 · 扶摇 MCP 利润表, Help: 合成验收虚构公司 · 扶摇 MCP 利润表
+						101 button Description: 查看依据：合成验收虚构公司 · 扶摇 MCP 现金流量表, Help: 合成验收虚构公司 · 扶摇 MCP 现金流量表
+					102 button (collapsed) 资料范围与口径, Secondary Actions: Expand
+						103 text 资料范围与口径
+					104 button 复制分析
+					105 button 查看本版依据
+					106 text 第 1 版分析
+					107 container 本轮执行状态
+						108 button (collapsed) 运行记录 · 0 秒, Secondary Actions: Expand
+							109 text 运行记录
+							110 text · 0 秒
+						111 container
+							112 text 运行记录 · 0 秒
+					113 button 结束本轮研究
+					114 button (collapsed) 补充原始财报, Secondary Actions: Expand
+						115 text 补充原始财报
+					116 container 我的看法
+						117 heading 我的看法, Value: 2
+							118 text 我的看法
+						119 text 未记录 · 可选
+						120 button 记录我的看法
+						121 text 可以先不作结论，也可以用自己的话留下一条研究记录。
+				122 button 回到对话底部
+			123 container
+				124 text entry area (settable) 向研究助手提问
+				125 container
+					126 button (collapsed) Description: 展开辅助操作, Secondary Actions: Expand
+				127 text 研究助手
+				128 button (disabled) 发送问题
+			129 text 扶摇 MCP · 基于取得的证据回答 · 重要判断请核对原始资料
+		130 container 研究上下文, ID: research-context-panel
+			131 container
+				132 text RESEARCH CONTEXT
+				133 heading 研究上下文, Value: 2
+					134 text 研究上下文
+				135 button 关闭研究侧栏
+			136 container 研究侧栏内容
+				137 checkbox 研究上下文, Value: 1
+				138 checkbox 协作记录, Value: 0
+			139 container
+				140 container 研究范围
+					141 heading 研究对象, Value: 3
+						142 text 研究对象
+					143 text 合成验收虚构公司
+					144 text 999999.SZ
+					145 text 2024 年 · 年度
+					146 button 修改研究问题
+				147 container 本轮关注
+					148 heading 本轮关注, Value: 2
+						149 text 本轮关注
+					150 text 问题理解 · 可修改
+					151 button 修改关注点
+					152 text 合成研究：利润变化
+				153 container 个人研究记忆
+					154 heading 个人研究记忆, Value: 3
+						155 text 个人研究记忆
+					156 button 管理
+					157 container 本次研究记忆
+						158 text 本次不沿用研究记忆。
+						159 button 允许沿用
+						160 button 管理
+					161 container
+						162 text 当前对话已保存至本机服务 本次不自动更新个人记录 本次研究尚未保存到当前服务，个人研究记忆也未更新。
+			163 text 记录保存在本机服务目录，可修改、停用或删除。
+
+The focused UI element is 1 AXWebArea 见微 · 投资研究助手, URL: 127.0.0.1:8803/?task=d97a7987-7a87-4e63-bbd5-5881d0a60651

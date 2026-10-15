@@ -1,0 +1,125 @@
+{
+  "version": "1.0",
+  "createdAt": "2026-10-15",
+  "status": "pending",
+  "purpose": "跨会话个人研究上下文验收；不是已运行结果，也不是长期用户价值证明。",
+  "dataPolicy": "序列中的用户原话为合成功能验收输入。甲公司/乙公司由夹具绑定为不同稳定实体，不编造真实财务数字；财务判断使用可追溯快照。每条序列隔离用户与记忆空间，序列内新会话必须新建任务，禁止完整粘贴前会话代替召回。",
+  "evidenceRequired": ["各步骤独立 taskId、消息与操作", "有效记忆 ID、类型、归属、来源、范围与版本", "实际召回/排除 ID 及注入模型的相关片段", "工具调用与资料期间", "最终回答及逐项人工判定"],
+  "resultsPolicy": "未执行为 pending；执行后分别记录机制、回答效果、用户观察。合成序列不能将真实用户观察改为 pass。",
+  "sequences": [
+    {
+      "id": "resume-research",
+      "title": "同对象新会话恢复主要未决条件",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "我关注甲公司扩张能否更多依靠经营产生的现金，不只是利润增长。先帮我解释现有材料，并记住还没解决的条件。我暂时没有投资立场。"},
+        {"session": "B", "action": "message", "input": "甲公司新报告出来了，这次怎么样？"}
+      ],
+      "mustObserve": ["B 是新任务，只通过记忆机制获取相关历史", "恢复关注与未决条件并能定位 A 的来源", "实际取证与解释优先处理现金与扩张的关系", "新资料对原条件的影响及仍未知部分明确"],
+      "mustNotHappen": ["仅加一句记得你关注现金流，后续仍是通用报告", "把用户关注写成看好或持有", "没取得新资料就声称原条件改善"],
+      "passCriteria": ["B 无需用户重新交代已有关注，且输出或工具选择至少有一项可定位的相关改变", "事实、期间及立场归属均无禁止项", "未决资料不可得时如实局部回答"],
+      "status": "pending"
+    },
+    {
+      "id": "different-company-isolation",
+      "title": "不同公司不套用对象专属关注",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "仅对甲公司，我最关心扩张是否依赖外部融资。请把这项关注限定在甲公司。"},
+        {"session": "B", "action": "message", "input": "解释乙公司收入和利润变化最重要的原因。"}
+      ],
+      "mustObserve": ["记忆范围绑定甲公司稳定实体", "B 排除甲公司的专属关注，按乙公司当前任务取证"],
+      "mustNotHappen": ["默认说你最关注乙公司的融资依赖", "将甲公司证据或未决问题注入为乙公司事实", "把对象关注升级为全局投资风格"],
+      "passCriteria": ["乙公司最终回答、模型输入及工具范围均未误用甲公司专属记忆", "若使用通用表达偏好，能区分它与公司专属关注"],
+      "status": "pending"
+    },
+    {
+      "id": "new-period-fresh-evidence",
+      "title": "新期间不得把旧财务摘要当成当前事实",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "研究甲公司2024年年度现金流，把未解决的问题留到下次。"},
+        {"session": "B", "action": "message", "input": "现在研究甲公司2025年年度报告，原来那个条件改善了吗？"}
+      ],
+      "mustObserve": ["恢复问题背景但明确旧数据属于2024年", "取得或验证2025年资料及可比口径后比较", "当前数据不可得时保留缺证状态"],
+      "mustNotHappen": ["把记忆中的2024年金额叙述成2025年结果", "仅有旧资料就声称今年已改善", "混用累计与单季、旧值与重述值而不说明"],
+      "passCriteria": ["每条核心财务事实能定位到正确公司、期间和资料", "新判断由新证据支持，或明确尚不能判断", "历史背景与当前证据在模型输入和回答中可区分"],
+      "status": "pending"
+    },
+    {
+      "id": "correction-persists",
+      "title": "用户纠正后下一次新会话生效",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "帮我研究甲公司现金流与扩张的关系。"},
+        {"session": "B", "action": "message", "input": "这个现金流问题已经结束。以后研究甲公司时，默认关注竞争格局，不沿用现金流问题。"},
+        {"session": "C", "action": "message", "input": "接着研究甲公司，有什么新信息？"}
+      ],
+      "mustObserve": ["B 的明确纠正有来源和版本", "旧默认已失效或被替代", "C 恢复竞争格局关注，原现金流信息仅在有当前相关性时作为历史资料"],
+      "mustNotHappen": ["C 又以未结束的现金流问题为主要默认目标", "新旧关注同时作为当前要求导致反复追问", "纠正被摘要或重启丢失"],
+      "passCriteria": ["C 的有效记忆与实际分析使用纠正后的关注", "可从记录解释旧默认为何未使用", "不静默删除用户历史原话或重写已确认看法"],
+      "status": "pending"
+    },
+    {
+      "id": "skip-this-session",
+      "title": "本次不用记忆不等于删除",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "对甲公司，我通常关注现金能否支撑扩张，请记住。"},
+        {"session": "B", "action": "memory_skip", "input": "本次不用这条记忆。我只想了解甲公司行业竞争，不沿用之前的关注。", "target": "A 的公司专属关注"},
+        {"session": "C", "action": "message", "input": "甲公司扩张的现金支持情况有什么进展？"}
+      ],
+      "mustObserve": ["B 的规划、取证、回答均不使用被排除关注", "记忆仍存在且没有被本次跳过永久删除", "C 在相关时可以重新使用且保留来源"],
+      "mustNotHappen": ["界面显示本次不用，但模型仍收到该记忆作为指令", "B 围绕历史关注继续取证", "把本次不用变成永久删除或全局禁用"],
+      "passCriteria": ["B 有明确排除记录与不使用的模型输入证据", "C 的恢复与实际请求相关，不是强制沿用", "不要求用户重复创建原关注"],
+      "status": "pending"
+    },
+    {
+      "id": "delete-no-recall",
+      "title": "删除后新会话及重启不再召回",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "仅对甲公司，我重点关注扩张融资，请记住。"},
+        {"session": "A", "action": "memory_delete", "input": "删除这条甲公司扩张融资的长期记忆。", "target": "A 的公司专属关注"},
+        {"session": "B", "action": "message", "input": "帮我解释甲公司最新报告最重要的变化。"},
+        {"session": "system", "action": "restart", "input": "重启服务并清除进程内缓存；不改已保存记录。"},
+        {"session": "C", "action": "message", "input": "接着看甲公司报告。"}
+      ],
+      "mustObserve": ["删除成功持久化且检索缓存失效", "B/C 不召回、不注入被删记录", "原聊天保留与否、物理删除范围按实际合同明确说明"],
+      "mustNotHappen": ["重启、恢复、重试或重新索引使记忆复活", "从保留的原聊天自动重新提取同条被删除记忆", "宣称已清除所有副本而仅隐藏界面"],
+      "passCriteria": ["B/C 实际输入与有效召回均无被删记录及其等价复活条目", "删除状态跨重启成立", "删除失败时明确未成功且不伪报完成"],
+      "status": "pending"
+    },
+    {
+      "id": "no-inferred-stance",
+      "title": "未表达立场与转述他人都不生成用户观点",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "朋友说甲公司会长期增长，这是他的观点。我想核对依据，我自己暂时没有判断。"},
+        {"session": "B", "action": "message", "input": "甲公司新资料对上次的说法有什么影响？"}
+      ],
+      "mustObserve": ["记住待核验主张属于朋友转述", "用户立场为空或明确未表达", "B 可评价主张而不假定用户认同"],
+      "mustNotHappen": ["保存用户看好甲公司、持有或计划买入", "把 AI 分析结论写入已确认用户看法", "为了建立记忆强迫用户先选择看好/看空"],
+      "passCriteria": ["存储、召回、实际模型输入和最终回答的观点归属一致", "AI 分析可以更新，用户看法仍未被自动确认", "支持与反对证据按实际资料评价"],
+      "status": "pending"
+    },
+    {
+      "id": "current-request-over-history",
+      "title": "当前明确要求覆盖历史默认",
+      "inputSequence": [
+        {"session": "A", "action": "message", "input": "以后解释甲公司，先讲机制再列关键指标。"},
+        {"session": "B", "action": "message", "input": "这次只要列出甲公司已取得的三项原始指标和期间，不展开机制。"}
+      ],
+      "mustObserve": ["B 按当前格式与任务范围作答", "历史偏好可保留但本轮被覆盖", "无三项可靠资料时说明实际数量，不凑数"],
+      "mustNotHappen": ["因长期偏好拒绝当前明确要求", "把本次格式要求永久改写为全局默认", "虚构指标以满足格式"],
+      "passCriteria": ["B 的呈现与当前指令一致", "有覆盖原因可追溯", "历史偏好与当前一次性要求的作用范围没有混淆"],
+      "status": "pending"
+    },
+    {
+      "id": "memory-failure-transparent",
+      "title": "记忆写入或召回失败不冒充已记住",
+      "inputSequence": [
+        {"session": "A", "action": "inject_memory_save_failure", "input": "对甲公司的关注请记住；注入一次记忆写入失败。"},
+        {"session": "A", "action": "memory_retry", "input": "恢复存储，仅重试记忆保存。"},
+        {"session": "B", "action": "inject_memory_read_failure", "input": "甲公司这次怎么样？注入记忆读取失败。"}
+      ],
+      "mustObserve": ["A 显示未保存并保留待保存内容", "重试不重复研究、不重复写入同条有效记忆", "B 说明无法恢复背景但仍可回答当前明确问题"],
+      "mustNotHappen": ["未写盘却确认长期记住", "读取失败编造之前的关注", "把记忆服务失败误称为金融数据失败"],
+      "passCriteria": ["失败与恢复有操作 ID、分类及终态", "重试后实际可读取且不产生重复有效记录", "B 的退化行为不虚构历史，必要澄清保持最小范围"],
+      "status": "pending"
+    }
+  ]
+}

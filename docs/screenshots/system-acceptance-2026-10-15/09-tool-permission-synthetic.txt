@@ -1,0 +1,89 @@
+Browser tab: 15, Title: "见微 · 投资研究助手", URL: "http://127.0.0.1:8803/?task=4b29673a-ad2f-44c8-aa20-75a090f6b3d7".
+1 AXWebArea 见微 · 投资研究助手, URL: 127.0.0.1:8803/?task=4b29673a-ad2f-44c8-aa20-75a090f6b3d7
+	2 container root
+		3 container 研究导航
+			4 text 见微 Jianwei
+			5 button 新的研究 ⌘ K
+				6 text 新的研究
+				7 text ⌘ K
+			8 text 你的研究
+			9 container 研究会话
+				10 button [合成界面验收]工具权限失败；虚构公司（999999 演示, Help: [合成界面验收]工具权限失败；虚构公司（999999
+					11 text [合成界面验收]工具权限失败；虚构公司（999999
+					12 text 演示
+				13 button [合成界面验收]模型429限流；虚构公司（99999 演示, Help: [合成界面验收]模型429限流；虚构公司（99999
+					14 text [合成界面验收]模型429限流；虚构公司（99999
+					15 text 演示
+			16 button 研究记忆
+			17 text 你
+			18 text 个人研究空间
+			19 text 扶摇 MCP
+		20 container
+			21 text 投资研究 [合成界面验收]工具权限失败；虚构公司（999999
+			22 button 配置模型 API
+			23 button 数据连接：扶摇 MCP，已配置 · 待验证
+			24 button 查看研究依据
+			25 pop up button (collapsed) Description: 更多操作, ID: radix-_r_0_, Secondary Actions: Expand
+			26 text 研究助手
+			27 button (collapsed) 协作记录, Secondary Actions: Expand
+			28 button (expanded) Description: 研究上下文, Secondary Actions: Collapse
+			29 container Description: 与研究助手的对话, ID: research-conversation
+				30 container
+					31 text 验收会话 · 记录用于功能检查，不代表真实用户的投资立场
+					32 container 本轮执行状态
+						33 button (collapsed) 本轮未能完成 · 0 秒, Secondary Actions: Expand
+							34 text 本轮未能完成
+							35 text · 0 秒
+						36 container
+							37 text 本轮未能完成 · 0 秒
+						38 container
+							39 text 已保留  1  项取证检查点；重试仅复用同公司、同期间的资料。
+							40 button 查看已取得资料
+					41 text [合成界面验收]工具权限失败；虚构公司（999999.SZ）2024年度，核对利润与现金流。
+					42 text 这次研究未能完成
+					43 text 扶摇数据服务拒绝查询（code=1003）：permission denied in synthetic test
+					44 text 确认服务或工具权限后重试。
+					45 button 重试当前操作
+			46 container
+				47 text entry area (settable) 向研究助手提问
+				48 container
+					49 button (collapsed) Description: 展开辅助操作, Secondary Actions: Expand
+				50 text 研究助手
+				51 button (disabled) 发送问题
+			52 text 扶摇 MCP · 基于取得的证据回答 · 重要判断请核对原始资料
+		53 container 研究上下文, ID: research-context-panel
+			54 container
+				55 text RESEARCH CONTEXT
+				56 heading 研究上下文, Value: 2
+					57 text 研究上下文
+				58 button 关闭研究侧栏
+			59 container 研究侧栏内容
+				60 checkbox 研究上下文, Value: 1
+				61 checkbox 协作记录, Value: 0
+			62 container
+				63 container 研究范围
+					64 heading 研究对象, Value: 3
+						65 text 研究对象
+					66 text 合成验收虚构公司
+					67 text 999999.SZ
+					68 text 2024 年 · 年度
+					69 button 修改研究问题
+				70 container 本轮关注
+					71 heading 本轮关注, Value: 2
+						72 text 本轮关注
+					73 text 问题理解 · 可修改
+					74 button 修改研究问题
+					75 text [合成界面验收]工具权限失败；虚构公司（999999.SZ）2024年度，核对利润与现金流。
+				76 container 个人研究记忆
+					77 heading 个人研究记忆, Value: 3
+						78 text 个人研究记忆
+					79 button 管理
+					80 container 本次研究记忆
+						81 text 本次不沿用研究记忆。
+						82 button 允许沿用
+						83 button 管理
+					84 container
+						85 text 当前对话已保存至本机服务 本次不自动更新个人记录
+			86 text 记录保存在本机服务目录，可修改、停用或删除。
+
+The focused UI element is 1 AXWebArea 见微 · 投资研究助手, URL: 127.0.0.1:8803/?task=4b29673a-ad2f-44c8-aa20-75a090f6b3d7

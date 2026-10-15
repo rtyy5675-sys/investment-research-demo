@@ -1,0 +1,66 @@
+/* Product theme for the MIT assistant-ui RunActivity disclosure. */
+.aui-run-activity {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--muted-foreground, #6b6b64);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.aui-run-summary { text-align: start; font-variant-numeric: tabular-nums; }
+.aui-run-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+  min-height: 36px;
+  padding: 5px 7px 5px 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.aui-run-trigger:hover { color: var(--foreground, #272722); }
+.aui-run-trigger:focus-visible {
+  outline: 2px solid var(--ring, #486954);
+  outline-offset: 3px;
+}
+.aui-run-chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 160ms ease;
+}
+.aui-run-trigger[data-state="open"] .aui-run-chevron { transform: rotate(90deg); }
+.aui-run-entries {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+  margin: 0 0 3px 7px;
+  padding: 8px 0 4px 17px;
+  border-inline-start: 1px solid var(--border, #e2e2da);
+  overflow-wrap: anywhere;
+}
+.aui-run-entries > li { min-width: 0; }
+.aui-run-entries p { margin: 0; }
+.aui-run-entry-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--foreground, #33332c);
+  font-size: 13px;
+  font-weight: 500;
+}
+.aui-run-entry-meta { margin-top: 3px; color: inherit; font-size: 12px; }
+.aui-run-entry-label svg { flex: 0 0 14px; width: 14px; height: 14px; }
+.aui-run-entries [data-activity-status="error"] .aui-run-entry-label { color: #b14b42; }
+.aui-run-latest { margin: 0; padding-inline-start: 20px; overflow-wrap: anywhere; }
+.aui-run-empty { margin: 0; padding-block: 5px; }
+@media (prefers-reduced-motion: reduce) {
+  .aui-run-chevron { transition: none; }
+}

@@ -1,0 +1,18 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {restoreCaseEvidence} from '../lib/research-evidence.mjs';
+import {readDisclosureContext} from '../lib/disclosure-context.mjs';
+const id='11111111-1111-4111-8111-111111111111',scope={thscode:'000333.SZ',scopeKey:'000333:2025:FY'};
+const evidence={id:'DOC-CASH-x',provider:'disclosure-pdf',companyCode:scope.thscode,scopeKey:scope.scopeKey,documentId:'hash',rawFields:[{},{}]};
+const memory={id:'memory',version:2,ownerId:'alice',companyCode:scope.thscode,evidence_refs:[{taskId:id,analysisRevision:1,evidenceId:evidence.id,companyCode:scope.thscode,scopeKey:scope.scopeKey}]};
+const source={ownerId:'alice',result:{revision:1,researchScope:scope},evidence:[evidence],documents:[{id:'hash',status:'verified'}]};
+const options={ownerId:'alice',loadTask:async()=>source,documentStore:{load:async()=>({document:{id:'hash'}})}};
+test('cross-chat references restore actual published evidence and original document',async()=>{const restored=await restoreCaseEvidence(memory,scope,options);assert.equal(restored.evidence[0].restoredFrom.taskId,id);assert.equal(restored.documents[0].id,'hash');});
+test('another owner or company never receives source evidence',async()=>{assert.deepEqual((await restoreCaseEvidence(memory,scope,{...options,ownerId:'bob'})).evidence,[]);assert.deepEqual((await restoreCaseEvidence(memory,{...scope,thscode:'600519.SH'},options)).evidence,[]);});
+test('new period does not reuse old financial evidence',async()=>{assert.deepEqual((await restoreCaseEvidence(memory,{...scope,scopeKey:'000333:2026:FY'},options)).evidence,[]);});
+test('missing PDF or unpublished revision cannot be promoted from memory',async()=>{const restored=await restoreCaseEvidence(memory,scope,{...options,documentStore:{load:async()=>{throw Error('missing')}}});assert.deepEqual(restored.evidence,[]);assert.equal(restored.rejected[0].reason,'document_unavailable');const changed=structuredClone(memory);changed.evidence_refs[0].analysisRevision=99;assert.deepEqual((await restoreCaseEvidence(changed,scope,options)).evidence,[]);});
+test('saved historical version remains usable after source chat advances',async()=>{const old=structuredClone(source);old.history=[{result:old.result,evidence:old.evidence}];old.result={revision:2,researchScope:scope};old.evidence=[];assert.equal((await restoreCaseEvidence(memory,scope,{...options,loadTask:async()=>old})).evidence[0].id,evidence.id);});
+test('notes retrieval excludes parent-only cash tables and preserves literal pages',async()=>{const task={documentEvidence:[evidence]};const pages=[{page:1,text:'合并现金流量表\n单位：元\n2025年度 2024年度\n收到其他与经营活动有关的现金 100 80'},{page:2,text:'母公司现金流量表\n收到其他与经营活动有关的现金 999 888'},{page:3,text:'经营活动现金流量变动说明\n收到其他与经营活动有关的现金变动主要是存款利息增加。'}];const result=await readDisclosureContext(task,scope,'剩余项目构成与原因',{load:async()=>({parsed:{pages}})});assert(result.citations.some(c=>c.page===3));assert(!result.citations.some(c=>c.page===2));for(const c of result.citations)assert(pages.find(p=>p.page===c.page).text.includes(c.quote));});
+test('no matching notes means no generated evidence',async()=>{assert.equal(await readDisclosureContext({documentEvidence:[evidence]},scope,'剩余项目原因',{load:async()=>({parsed:{pages:[{page:1,text:'这里没有现金流相关附注'}]}})}),null);});
+
+test('legacy source pointer recovers omitted original PDF from the exact published result',async()=>{const legacy={...memory,evidence_refs:[],source:{taskId:id,analysisRevision:1}};const restored=await restoreCaseEvidence(legacy,scope,options);assert.equal(restored.evidence[0].id,evidence.id);});

@@ -1,0 +1,30 @@
+.model-connection .connection-card-title h3 { display: inline-flex; align-items: center; gap: 7px; }
+.model-connection .model-tested-note { display: block; margin-top: 6px; color: #77796e; font-size: 11px; line-height: 1.75; }
+.model-connection .model-fields { min-width: 0; border: 0; margin: 16px 0 0; padding: 0; }
+.model-connection .model-fields > label { display: block; margin: 15px 0 7px; color: #56564f; font-size: 12px; line-height: 1.5; }
+.model-connection .model-fields > label:first-child { margin-top: 0; }
+.model-connection .model-fields input,
+.model-connection .model-fields select { display: block; width: 100%; min-width: 0; box-sizing: border-box; padding: 10px 11px; border: 1px solid #d9d4ca; border-radius: 7px; background: #fffefa; color: #3f4039; font: inherit; font-size: 12px; line-height: 1.5; }
+.model-connection .model-fields input::placeholder { color: #929188; }
+.model-connection .model-fields input:focus-visible,
+.model-connection .model-fields select:focus-visible,
+.model-connection button:focus-visible { outline: 2px solid #8d9c7f; outline-offset: 2px; }
+.model-connection .model-fields > small,
+.model-connection .model-last-verified { display: block; color: #77796e; font-size: 11px; line-height: 1.75; margin-top: 6px; }
+.model-connection .model-key-state { margin-left: 6px; font-size: 10px; color: #787a70; font-weight: 400; }
+.model-connection .model-schema-note { margin-top: 12px; padding: 10px 11px; border: 1px solid #e9e4d9; border-radius: 7px; background: #f8f6f0; color: #6e6c5f; font-size: 11px; }
+.model-connection .model-verification-note { margin-top: 10px; font-size: 11px; line-height: 1.8; }
+.model-connection .model-loading { display: flex; align-items: center; gap: 7px; margin-top: 12px; }
+.model-connection .model-notice { color: #526847; margin-top: 12px; }
+.model-connection .model-error { margin-top: 12px; padding: 11px; border: 1px solid #e6d8c6; border-radius: 7px; background: #faf6ed; }
+.model-connection .model-error p { color: #866444; }
+.model-connection .model-error button { display: inline-flex; align-items: center; gap: 5px; margin-top: 9px; padding: 6px 8px; border: 1px solid #dacfbe; border-radius: 5px; color: #6f6351; font-size: 11px; }
+.model-connection .model-error small { display: block; font-size: 10px; line-height: 1.7; margin-top: 5px; color: #857b6b; }
+.model-connection .model-fields:disabled { opacity: .7; }
+.model-connection button:disabled { cursor: not-allowed; opacity: .55; }
+@media (max-width: 480px) {
+  .model-connection .connection-card-title { align-items: flex-start; }
+  .model-connection .model-key-state { display: block; margin: 3px 0 0; }
+  .model-connection .model-fields input,
+  .model-connection .model-fields select { font-size: 16px; }
+}

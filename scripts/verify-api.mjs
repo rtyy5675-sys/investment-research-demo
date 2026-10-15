@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';import {randomUUID} from 'node:crypto';import {writeFile,mkdir} from 'node:fs/promises';
+const base=process.env.DEMO_URL||'http://127.0.0.1:8791';
+const call=async(path,data)=>{const response=await fetch(base+path,data?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}:{});assert.equal(response.ok,true);return response.json();};
+const operationId=randomUUID();const taskInput=process.env.DEMO_INPUT;
+if(!taskInput?.trim())throw new Error('请通过 DEMO_INPUT 提供一条包含公司、报告期和研究问题的任务。');
+const first=await call('/api/tasks',{input:taskInput.trim(),mode:'roles',operationId});
+const duplicate=await call('/api/tasks',{input:taskInput.trim(),mode:'roles',operationId});
+assert.equal(duplicate.id,first.id);assert.equal(duplicate.revision,first.revision);
+const revisionOperation=randomUUID();const revisionMessage=process.env.DEMO_REVISION||'请修改当前研究问题，重点核查利润与经营现金流变化是否一致。';const input={message:revisionMessage,bot:'verify',kind:'revise',operationId:revisionOperation};
+const revised=await call(`/api/tasks/${first.id}/messages`,input);
+const repeated=await call(`/api/tasks/${first.id}/messages`,input);
+assert.equal(revised.revision,first.revision+1);assert.equal(repeated.revision,revised.revision);
+await new Promise(resolve=>setTimeout(resolve,1500));
+const final=await call(`/api/tasks/${first.id}`);
+assert.equal(final.revision,revised.revision);assert.equal(final.messages.filter(message=>message.from==='user'&&message.text===revisionMessage).length,1);
+const report={executedAt:new Date().toISOString(),checks:{sameCreationId:first.id===duplicate.id,sameCreationRevision:first.revision===duplicate.revision,sameMessageRevision:revised.revision===repeated.revision,currentRevisionPreserved:final.revision===revised.revision,revisionMessageStoredOnce:final.messages.filter(message=>message.from==='user'&&message.text===revisionMessage).length===1},task:final,note:'实际HTTP链路检查重复创建与重复消息幂等，并确认修订操作保持当前版本；迟到结果的返回顺序由状态测试覆盖。'};
+await mkdir('artifacts',{recursive:true});await writeFile('artifacts/api-verification.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report.checks));
